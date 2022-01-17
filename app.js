@@ -5,8 +5,8 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const createTeam = require('./src/createTeam')
 
-const generateTeam = []
-// Prompts employee in the terminal to add generateTeam member profile data. 
+const renderTeam = []
+// Prompts employee in the terminal to add renderTeam member profile data. 
 const promptEmployee = () => {
   return inquirer.prompt([
     {
@@ -77,7 +77,7 @@ const promptEmployee = () => {
 
 .then((managerData) => {
     const manager = new Manager(managerData.name, managerData.id, managerData.email, managerData.officeNumber);
-    generateTeam.push(manager);
+    renderTeam.push(manager);
 
     switch(managerData.role) {
         case 'Engineer':
@@ -87,7 +87,7 @@ const promptEmployee = () => {
             promptIntern();
             break;
         default:
-            writeToFile('dist/index.html', createTeam(generateTeam));    
+            writeToFile('dist/index.html', createTeam(renderTeam));    
     }
 });
 };
@@ -162,7 +162,7 @@ return inquirer.prompt([
 
 .then((engineerData) => {
     const engineer = new Engineer(engineerData.name, engineerData.id, engineerData.email, engineerData.github);
-    generateTeam.push(engineer);
+    renderTeam.push(engineer);
 
     switch(engineerData.role) {
         case 'Engineer':
@@ -172,7 +172,7 @@ return inquirer.prompt([
             promptIntern();
             break;
         default:
-            writeToFile('dist/index.html', createTeam(generateTeam));        
+            writeToFile('dist/index.html', createTeam(renderTeam));        
     }
 })
 };
@@ -246,7 +246,7 @@ return inquirer.prompt([
 
 .then((internData) => {
     const intern = new Intern(internData.name, internData.id, internData.email, internData.school);
-    generateTeam.push(intern);
+    renderTeam.push(intern);
 
     switch(internData.role) {
         case 'Engineer':
@@ -256,10 +256,8 @@ return inquirer.prompt([
             promptIntern();
             break;
         default:
-            writeToFile('dist/index.html', createTeam(generateTeam));
+            writeToFile('dist/index.html', createTeam(renderTeam));
     }
-
-
 })
 };
 
