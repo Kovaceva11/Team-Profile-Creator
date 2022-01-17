@@ -42,6 +42,19 @@ describe('Intern', () => {
         expect(intern.email).toBe('des@gmail.com');
         expect(intern.getEmail()).toBe('des@gmail.com');
     });
+
+     // test intern School and get Schoolfunctions
+     it('should test properties for intern School then pass their values into the getSchool', () => {
+        const nameProperty = 'Des';
+        const idProperty = 32;
+        const emailProperty = 'des@gmail.com';
+        const schoolProperty = "Georgia Tech";
+        
+        
+        const intern = new Intern(nameProperty, idProperty, emailProperty, schoolProperty);
+        expect(intern.school).toBe('Georgia Tech');
+        expect(intern.getSchool()).toBe('Georgia Tech');
+    });
     
     // test intern Role/Title and getRole functions
     it('should test properties for intern Role/Title then pass their values into the getRole()', () => {
@@ -49,22 +62,9 @@ describe('Intern', () => {
         const idProperty = 32;
         const emailProperty = 'des@gmail.com';
         const titleProperty = 'Intern';
-        const intern = new Intern(nameProperty, idProperty, emailProperty, titleProperty);
+        const schoolProperty = 'Georgia Tech';
+        const intern = new Intern(nameProperty, idProperty, emailProperty, schoolProperty, titleProperty);
         expect(intern.title).toBe('Intern');
-        expect(intern.getRole()).toBe('Intern'); //getRole is title. tile is Role.
-    });
-
-     // test intern School and get Schoolfunctions
-     it('should test properties for intern School then pass their values into the getSchool', () => {
-        const nameProperty = 'Des';
-        const idProperty = 32;
-        const emailProperty = 'des@gmail.com';
-        const schoolProperty = "GeorgiaTech"
-        const titleProperty = 'Intern';
-        const intern = new Intern(nameProperty, idProperty, emailProperty,schoolProperty, titleProperty);
-        expect(intern.title).toBe('Intern');
-        expect(intern.getSchool()).toBe('Intern'); //getRole is title. tile is Role.
-    });
-
-    
+        expect(intern.getRole()).toBe('Intern'); 
+    });      
 });
