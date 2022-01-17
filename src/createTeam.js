@@ -62,7 +62,7 @@ const renderEngineer = (Engineer) => {
                             <li class="list-group-item">ID #: ${Engineer.getId()}</li>
                             <li class="list-group-item"><i class="fas fa-envelope"></i> <a class="list-font" href="mailto:${Engineer.getEmail()}">${Engineer.getEmail()}</a></li>
                             <!-- insert engineer github template literals-->
-                            <li class="list-group-item"><i class="fab fa-github"></i> <a class="list-font" href="https://github.com/${Engineer.getGithub()}"></a>${Engineer.getGithub()}</li>
+                            <li class="list-group-item"><i class="fab fa-github"></i> <a class="list-font" href="https://github.com/${Engineer.getGithub()}">${Engineer.getGithub()}</a></li>
                         </div>
                     </div>                    
                 </div>
